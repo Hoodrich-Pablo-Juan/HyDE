@@ -12,28 +12,19 @@
 @import "groups/leaf.css";
 @import "groups/leaf-inverse.css";
 
-
 /* Dynamic Stuff */
-/*
-"../../../" Use relative path to navigate $HOME $HOME/
-*/
 @import "../../../../.config/waybar/includes/border-radius.css";
 @import "../../../../.config/waybar/includes/global.css";
 
 /* Base HyDE Styles */
 
 window#waybar {
-    background: @bar-bg;
+    background: rgba(30, 30, 30, 0.5); /* semi-transparent frosted glass */
+    border-radius: 12px;
 }
 
-.module {
-    color: @main-fg;
-}
+/* Groups / Islands configs */
 
-/*
- These are groups/islands configs
-
-*/
 #leaf,
 #leaf-inverse,
 #leaf-up,
@@ -47,32 +38,27 @@ window#waybar {
 #pill-up,
 #pill-in,
 #pill-out {
-    background-color: @main-bg;
-    border-style: solid;
-    border-color: @main-bg;
+    background-color: rgba(40, 40, 40, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
 }
 
-
-
-
+/* Workspaces Buttons */
 
 #workspaces button {
     box-shadow: none;
-    text-shadow: none;
-    padding: 0em;
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
-    margin-left: 0em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-    margin-right: 0em;
-    color: @main-fg;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    padding: 0em 0.3em;
+    margin: 0.3em 0;
+    color: #ffffff; /* default readable text */
     animation: ws_normal 20s ease-in-out 1;
+    background-color: rgba(40, 40, 40, 0.4);
+    border-radius: 8px;
 }
 
 #workspaces button.active {
-    background: @wb-act-bg;
-    color: @wb-act-fg;
+    background-color: rgba(70, 70, 70, 0.6);
+    color: #ffffff; /* readable active text */
     margin-left: 0.3em;
     padding-left: 1.2em;
     padding-right: 1.2em;
@@ -82,29 +68,28 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-fg;
+    background-color: rgba(90, 90, 90, 0.5);
+    color: #ffffff; /* readable hover text */
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
+/* Taskbar Buttons */
+
 #taskbar button {
     box-shadow: none;
-    text-shadow: none;
-    padding: 0em;
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
-    margin-left: 0em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-    margin-right: 0em;
-    color: @wb-color;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    padding: 0em 0.3em;
+    margin: 0.3em 0;
+    color: #ffffff; /* default readable text */
     animation: tb_normal 20s ease-in-out 1;
+    background-color: rgba(40, 40, 40, 0.4);
+    border-radius: 8px;
 }
 
 #taskbar button.active {
-    background: @wb-act-bg;
-    color: @wb-act-color;
+    background-color: rgba(70, 70, 70, 0.6);
+    color: #ffffff; /* readable active text */
     margin-left: 0.3em;
     padding-left: 1.2em;
     padding-right: 1.2em;
@@ -114,20 +99,19 @@ window#waybar {
 }
 
 #taskbar button:hover {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-color;
+    background-color: rgba(90, 90, 90, 0.5);
+    color: #ffffff; /* readable hover text */
     animation: tb_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
-
-
+/* Workspaces & Taskbar Containers */
 #workspaces,
 #taskbar {
     padding: 0em;
 }
 
-
+/* Modules Padding */
 window#waybar.top .modules-left,
 window#waybar.top .modules-center,
 window#waybar.top .modules-right,
@@ -138,7 +122,6 @@ window#waybar.bottom .modules-right {
     padding-right: 0.3em;
     margin-left: 0.3em;
     margin-right: 0.3em;
-
 }
 
 window#waybar.top label.module,
@@ -157,6 +140,7 @@ window#waybar.right label.module {
     margin-bottom: 0.2em;
 }
 
+/* Leaves & Pills Padding for Side Bars */
 window#waybar.right #leaf,
 window#waybar.left #leaf,
 window#waybar.right #leaf-inverse,
@@ -215,40 +199,37 @@ window#waybar.top #pill-out {
     padding: 0em 1em;
 }
 
-/* ? Dynamic button */
-
+/* Dynamic Buttons Margin */
 window#waybar.top button,
 window#waybar.bottom button {
     margin: 0.41em 0.11em;
     border: 0em;
-    /* padding: 0.1em 0.5em; */
-
 }
 
 window#waybar.left button,
 window#waybar.right button {
     margin: 0.11em 0.41em;
-    border: 0em
+    border: 0em;
 }
 
-
+/* Tooltips */
 tooltip {
-    /* all: unset; */
-    background: @main-bg;
-    color: @main-fg;
-    border-width: 0.1pt;
-    border-color: @main-fg ;
+    background-color: rgba(25, 25, 25, 0.6);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
 }
 
+/* Tray Menu */
 #tray menu * {
     min-height: 1.6em;
-
 }
 
 #tray menu separator {
     min-height: 0.1em;
 }
 
+/* Language Button */
 #language {
     min-width: 1.11em;
 }
