@@ -16,14 +16,33 @@
 @import "../../../../.config/waybar/includes/border-radius.css";
 @import "../../../../.config/waybar/includes/global.css";
 
-/* Base HyDE Styles */
+/* Base HyDE Styles with global font properties */
 
-window#waybar {
-    background: rgba(30, 30, 30, 0.5); /* semi-transparent frosted glass */
-    border-radius: 12px;
+* {
+    font-family: "OpenSans", "Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
 }
 
-/* Groups / Islands configs */
+window#waybar {
+    background: black; /* fully transparent background */
+    border-radius: 0px; /* seamless - no rounded corners */
+    border: none; /* no border for seamless look */
+    box-shadow: none; /* no shadow for seamless look */
+    font-size: 1.1em; /* slightly larger for main bar */
+    transition: background 0.3s ease; /* smooth transitions */
+}
+
+/* Reactive states - keep transparent but could add subtle effects */
+window#waybar:hover {
+    background: transparent;
+}
+
+window#waybar.focused {
+    background: transparent;
+}
+
+/* Groups / Islands - Make them transparent */
 
 #leaf,
 #leaf-inverse,
@@ -38,19 +57,19 @@ window#waybar {
 #pill-up,
 #pill-in,
 #pill-out {
-    background-color: rgba(40, 40, 40, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    border: none;
     border-radius: 10px;
 }
 
-/* Workspaces Buttons */
+/* Workspaces Buttons - Keep original solid background */
 
 #workspaces button {
     box-shadow: none;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
     padding: 0em 0.3em;
     margin: 0.3em 0;
-    color: #ffffff; /* default readable text */
+    color: #ffffff;
     animation: ws_normal 20s ease-in-out 1;
     background-color: rgba(40, 40, 40, 0.4);
     border-radius: 8px;
@@ -58,7 +77,7 @@ window#waybar {
 
 #workspaces button.active {
     background-color: rgba(70, 70, 70, 0.6);
-    color: #ffffff; /* readable active text */
+    color: #ffffff;
     margin-left: 0.3em;
     padding-left: 1.2em;
     padding-right: 1.2em;
@@ -69,27 +88,28 @@ window#waybar {
 
 #workspaces button:hover {
     background-color: rgba(90, 90, 90, 0.5);
-    color: #ffffff; /* readable hover text */
+    color: #ffffff;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
-/* Taskbar Buttons */
+/* Taskbar Buttons - Make transparent */
 
 #taskbar button {
     box-shadow: none;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
     padding: 0em 0.3em;
     margin: 0.3em 0;
-    color: #ffffff; /* default readable text */
+    color: #ffffff;
     animation: tb_normal 20s ease-in-out 1;
-    background-color: rgba(40, 40, 40, 0.4);
+    background: transparent;
+    border: none;
     border-radius: 8px;
 }
 
 #taskbar button.active {
-    background-color: rgba(70, 70, 70, 0.6);
-    color: #ffffff; /* readable active text */
+    background: transparent;
+    color: #ffffff;
     margin-left: 0.3em;
     padding-left: 1.2em;
     padding-right: 1.2em;
@@ -99,8 +119,8 @@ window#waybar {
 }
 
 #taskbar button:hover {
-    background-color: rgba(90, 90, 90, 0.5);
-    color: #ffffff; /* readable hover text */
+    background: transparent;
+    color: #ffffff;
     animation: tb_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
@@ -132,13 +152,6 @@ window#waybar.bottom label.module {
     margin-right: 0.2em;
 }
 
-window#waybar.left label.module,
-window#waybar.right label.module {
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-}
 
 /* Leaves & Pills Padding for Side Bars */
 window#waybar.right #leaf,
@@ -212,15 +225,16 @@ window#waybar.right button {
     border: 0em;
 }
 
-/* Tooltips */
+/* Tooltips - clean and simple */
 tooltip {
-    background-color: rgba(25, 25, 25, 0.6);
+    background-color: rgba(25, 25, 25, 0.9);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
-/* Tray Menu */
+/* Tray Menu - clean and simple */
 #tray menu * {
     min-height: 1.6em;
 }
@@ -233,3 +247,6 @@ tooltip {
 #language {
     min-width: 1.11em;
 }
+
+
+
