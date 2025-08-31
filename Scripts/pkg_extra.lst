@@ -59,4 +59,7 @@ duf|zsh                                                  # prettier version of d
 #swaylock-effects-git                                   # swaylock with effects // very minimal lockscreen
 
 # --------------------------------------------------- // OSD
-swayosd-git                                             #A GTK based on screen display for keyboard shortcuts like caps-lock and volume
+swayosd-git
+zen-browser-bin
+googlekeep
+#A GTK based on screen display for keyboard shortcuts like caps-lock and volume
