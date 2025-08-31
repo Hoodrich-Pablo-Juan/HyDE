@@ -61,5 +61,6 @@ duf|zsh                                                  # prettier version of d
 # --------------------------------------------------- // OSD
 swayosd-git
 zen-browser-bin
+localsend-bin
 googlekeep
 #A GTK based on screen display for keyboard shortcuts like caps-lock and volume
