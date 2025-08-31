@@ -31,7 +31,7 @@ mangohud                                               # system performance over
 cava                                                   # audio visualizer
 spotify                                                # proprietary music streaming service
 spicetify-cli                                          # cli to customize spotify client
-
+micro
 # --------------------------------------------------- // Apps
 # neovim                                               # vim based text editor
 
@@ -63,4 +63,5 @@ swayosd-git
 zen-browser-bin
 localsend-bin
 googlekeep
+
 #A GTK based on screen display for keyboard shortcuts like caps-lock and volume
