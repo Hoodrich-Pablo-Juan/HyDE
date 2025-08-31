@@ -80,7 +80,7 @@ To install, execute the following commands:
 
 ```shell
 pacman -S --needed git base-devel
-git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
+git clone --depth 1 https://github.com/Hoodrich-Pablo-Juan/HyDE ~/HyDE
 cd ~/HyDE/Scripts
 ./install.sh
 ```
