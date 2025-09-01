@@ -25,7 +25,7 @@
 }
 
 window#waybar {
-    background: black; /* fully transparent background */
+    background: transparent; /* fully transparent background */
     border-radius: 0px; /* seamless - no rounded corners */
     border: none; /* no border for seamless look */
     box-shadow: none; /* no shadow for seamless look */
