@@ -75,7 +75,11 @@ code                                                   # ide text editor
 nwg-displays                                           # monitor management utility
 fzf                                                    # Command-line fuzzy finder
 qutebrowser
-
+zen-browser-bin
+localsend-bin
+googlekeep
+micro
+ttf-opensans
 # --------------------------------------------------- // Shell
 starship|zsh                                           # customizable shell prompt written in Rust
 # starship-git                                         # The cross-shell prompt for astronauts  
