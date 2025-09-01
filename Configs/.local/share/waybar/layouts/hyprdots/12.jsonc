@@ -20,8 +20,7 @@
     "group/pill#left": {
         "orientation": "inherit",
         "modules": [
-            "wlr/taskbar",
-            "mpris"
+            "hyprland/workspaces"
         ]
     },
     "modules-center": [
@@ -30,36 +29,49 @@
     "group/pill#center": {
         "orientation": "inherit",
         "modules": [
-            "idle_inhibitor",
-            "clock"
+            "custom/cava",
+            "clock",
+            "custom/weather"
         ]
     },
     "modules-right": [
-        "group/pill#right1",
-        "group/pill#right2"
+        "group/pill#right"
     ],
-    "group/pill#right1": {
+    "group/pill#right": {
         "orientation": "inherit",
         "modules": [
+            "battery",
             "backlight",
-            "network",
-            "pulseaudio",
-            "pulseaudio#microphone",
-            "custom/updates"
+            "tray",
+            "custom/power",
+            "idle_inhibitor",
+            "custom/hyprsunset",
+            "custom/hyde-menu"
         ]
     },
-    "group/pill#right2": {
-        "orientation": "inherit",
-        "modules": [
-            "privacy",
-            "tray",
-            "battery",
-            "custom/wallchange",
-            "custom/theme",
-            "custom/wbar",
-            "custom/cliphist",
-            "custom/hyde-menu",
-            "custom/power"
-        ]
+    // Weather configuration for Timișoara
+    "custom/weather": {
+        "exec": "curl -s 'https://wttr.in/Timișoara?format=1' | sed 's/+//; s/°C/°/'",
+        "interval": 600,
+        "return-type": "",
+        "format": " {}",
+        "tooltip": false
+    },
+    // Clock configuration - 24 hour format
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %B %d, %Y - %H:%M:%S}",
+        "interval": 1
+    },
+    // Battery configuration - show only percentage, no icon
+    "battery": {
+        "format": "{capacity}%",
+        "format-charging": "{capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-critical": "{capacity}%",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
     }
 }
