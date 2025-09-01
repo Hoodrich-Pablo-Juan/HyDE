@@ -20,8 +20,7 @@
     "group/pill#left": {
         "orientation": "inherit",
         "modules": [
-            "hyprland/workspaces",
-            "wlr/taskbar"
+            "hyprland/workspaces"
         ]
     },
     "modules-center": [
@@ -30,13 +29,8 @@
     "group/pill#center": {
         "orientation": "inherit",
         "modules": [
-            "keyboard-state",
-            "custom/hyprsunset",
-            "idle_inhibitor",
+            "custom/cava",
             "clock",
-            "custom/updates",
-            "custom/keybindhint",
-            "custom/gamemode",
             "custom/weather"
         ]
     },
@@ -46,19 +40,38 @@
     "group/pill#right": {
         "orientation": "inherit",
         "modules": [
-            "privacy",
+            "battery",
             "backlight",
             "tray",
-            "network",
-            "custom/bluetooth",
-            "pulseaudio",
-            "pulseaudio#microphone",
-            "battery",
-            "custom/gpuinfo",
-            "custom/cpuinfo",
-            "custom/sensorsinfo",
-            "custom/swaync",
+            "custom/power",
+            "idle_inhibitor",
+            "custom/hyprsunset",
             "custom/hyde-menu"
         ]
+    },
+    // Weather configuration for Timișoara
+    "custom/weather": {
+        "exec": "curl -s 'https://wttr.in/Timișoara?format=1' | sed 's/+//; s/°C/°/'",
+        "interval": 600,
+        "return-type": "",
+        "format": " {}",
+        "tooltip": false
+    },
+    // Clock configuration - 24 hour format
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %B %d, %Y - %H:%M:%S}",
+        "interval": 1
+    },
+    // Battery configuration - show only percentage, no icon
+    "battery": {
+        "format": "{capacity}%",
+        "format-charging": "{capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-critical": "{capacity}%",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
     }
 }
