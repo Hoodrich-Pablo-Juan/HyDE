@@ -14,7 +14,7 @@ ddcui                                                  # GUI to control brightne
 
 # --------------------------------------------------- // Misc
 xdg-desktop-portal-gtk
-ttf-opensans
+
 # xdg desktop portal using gtk
 wf-recorder                                          # Screen recorder for wlroots-based compositors such as sway
 # emote                                                # emoji picker gtk3
@@ -31,7 +31,11 @@ mangohud                                               # system performance over
 cava                                                   # audio visualizer
 spotify                                                # proprietary music streaming service
 spicetify-cli                                          # cli to customize spotify client
+zen-browser-bin
+localsend-bin
+googlekeep
 micro
+ttf-opensans
 # --------------------------------------------------- // Apps
 # neovim                                               # vim based text editor
 
@@ -60,8 +64,5 @@ duf|zsh                                                  # prettier version of d
 
 # --------------------------------------------------- // OSD
 swayosd-git
-zen-browser-bin
-localsend-bin
-googlekeep
 
 #A GTK based on screen display for keyboard shortcuts like caps-lock and volume
