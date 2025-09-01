@@ -30,8 +30,8 @@
         "orientation": "inherit",
         "modules": [
             "custom/cava",
-            "idle_inhibitor",
-            "clock"
+            "clock",
+            "custom/weather"
         ]
     },
     "modules-right": [
@@ -40,16 +40,38 @@
     "group/pill#right": {
         "orientation": "inherit",
         "modules": [
-            "backlight",
-            "pulseaudio",
-            "pulseaudio#microphone",
-            "tray",
             "battery",
-            "custom/keybindhint",
-            "custom/cliphist",
+            "backlight",
+            "tray",
+            "custom/power",
+            "idle_inhibitor",
             "custom/hyprsunset",
-            "custom/hyde-menu",
-            "custom/power"
+            "custom/hyde-menu"
         ]
+    },
+    // Weather configuration for Timișoara
+    "custom/weather": {
+        "exec": "curl -s 'https://wttr.in/Timișoara?format=1' | sed 's/+//; s/°C/°/'",
+        "interval": 600,
+        "return-type": "",
+        "format": " {}",
+        "tooltip": false
+    },
+    // Clock configuration - 24 hour format
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %B %d, %Y - %H:%M:%S}",
+        "interval": 1
+    },
+    // Battery configuration - show only percentage, no icon
+    "battery": {
+        "format": "{capacity}%",
+        "format-charging": "{capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-critical": "{capacity}%",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
     }
 }
